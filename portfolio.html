@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yamini P | Portfolio</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .hero-title,
+        .hero-role,
+        .hero-tagline,
+        .hero-description,
+        .badge {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+.hero-description {
+    text-align: justify;
+}
+        :root {
+    --bg-color: #ffffff;
+    --text-primary: #1F2937;
+    --text-secondary: #6B7280;
+    --accent-purple: #4F46E5;
+    --accent-cyan: #7C3AED;
+    --accent-pink: #EC4899;
+    --glass-bg: rgba(255, 255, 255, 0.9);
+    --glass-border: rgba(79, 70, 229, 0.2);
+    --shadow: 0 4px 20px 0 rgba(79, 70, 229, 0.15);
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+    scroll-snap-type: y mandatory;
+}
+
+section {
+    scroll-snap-align: start;
+    min-height: 100vh;
+    padding: 80px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+     body {
+  background: radial-gradient(circle at top, #f3f0ff 0%, #ffffff 60%);
+}
+
+        /* --- Fixed Dashboard Navigation --- */
+        .dashboard {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .dashboard-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-purple);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background: var(--accent-purple);
+            color: white;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor }
+
+        /* --- Layout &: pointer;
+        Utilities --- */
+        
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+    color: #1F2937;
+    font-weight: 700;
+}
+
+h2 {
+    color: #4F46E5;
+}
+        h2 {
+            color: var(--accent-purple);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* --- 1. Hero Section --- */
+        .hero-content {
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            background: linear-gradient(45deg, var(--accent-purple), var(--accent-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .hero-role {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .hero-tagline {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--accent-cyan);
+            margin-bottom: 2rem;
+        }
+
+        .hero-details {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .badge {
+            background: rgba(127, 90, 240, 0.1);
+            color: var(--accent-purple);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            border: 1px solid var(--accent-purple);
+            font-size: 0.9rem;
+        }
+
+        .hero-description {
+            max-width: 600px;
+            margin: 0 auto;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* --- 2. CTA Section --- */
+        .cta-content {
+            text-align: center;
+        }
+
+        .btn-glow {
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(45deg, var(--accent-purple), var(--accent-pink));
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(127, 90, 240, 0.4);
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .btn-glow:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 25px rgba(127, 90, 240, 0.6);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent-purple);
+            color: var(--accent-purple);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent-purple);
+            color: white;
+        }
+
+        /* --- 3. Resume Section --- */
+        .resume-card {
+            text-align: center;
+            max-width: 500px;
+        }
+
+        .resume-preview {
+            background: #f0f0f0;
+            height: 200px;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 1.2rem;
+        }
+
+        /* --- 4. Projects Section --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            width: 100%;
+        }
+
+        .project-card h3 {
+            color: var(--accent-purple);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* --- 5. Skills Section --- */
+        .skills-wrapper {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .skill-box {
+            margin-bottom: 20px;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+            background: #eee;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-cyan));
+            border-radius: 10px;
+        }
+
+        .tools-grid {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        /* --- 6. Contact Section --- */
+        .contact-form {
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: white;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-purple);
+        }
+
+        .error-msg {
+            color: #e74c3c;
+            font-size: 0.85rem;
+            display: none;
+            margin-top: -10px;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 2rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-info p {
+            margin: 8px 0;
+        }
+
+        .contact-info strong {
+            color: var(--text-primary);
+        }
+
+                    /* --- 7. Certifications Section --- */
+            .certifications-grid, .articles-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+                width: 100%;
+            }
+
+            .certification-card, .article-card {
+                text-align: center;
+            }
+
+            .certification-card h3, .article-card h3 {
+                color: var(--accent-purple);
+                margin-bottom: 0.5rem;
+                font-family: 'Times New Roman', Times, serif;
+            }
+
+            .certification-card p, .article-card p {
+                color: var(--text-secondary);
+                font-size: 0.95rem;
+                font-family: 'Times New Roman', Times, serif;
+            }
+
+        /* --- 8. Coding Profiles --- */
+        .profiles-grid {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .profile-link {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--accent-purple);
+            text-decoration: none;
+            box-shadow: var(--shadow);
+            transition: 0.3s;
+        }
+
+        .profile-link:hover {
+            background: var(--accent-purple);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 2rem;
+            text-align: center;
+            background: #f8f9fa;
+        }
+
+        .socials {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 1rem;
+        }
+
+        .social-icon {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            transition: 0.3s;
+        }
+
+        .social-icon:hover {
+            color: var(--accent-pink);
+            transform: translateY(-3px);
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: var(--shadow);
+                text-align: center;
+            }
+            .nav-links.active { display: flex; }
+            .menu-toggle { display: block; }
+            .dashboard-container { padding: 0 15px; }
+            section { padding: 100px 15px 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fixed Dashboard Navigation -->
+    <nav class="dashboard">
+        <div class="dashboard-container">
+            <a href="#home" class="logo">Yamini P</a>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+                       <ul class="nav-links" id="navLinks">
+                            <li><a href="#home" class="active">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#resume">Resume</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="#skills">Skills</a></li>
+                            <li><a href="#certifications">Certifications</a></li>  <!-- Changed from articles -->
+                            <li><a href="#profiles">Profiles</a></li>
+                            <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+       <!-- 1. Hero + About Section -->
+    <section id="home">
+        <div class="container hero-content" style="text-align: center;">
+            <h1 class="hero-title" style="font-family: 'Times New Roman', Times, serif;">Yamini P</h1>
+            <p class="hero-role" style="font-family: 'Times New Roman', Times, serif;">Computer Science Engineering Student</p>
+            <p class="hero-tagline" style="font-family: 'Times New Roman', Times, serif;">"Building intelligent solutions with code and creativity."</p>
+            
+            <div class="hero-details" style="justify-content: center; display: flex;">
+                <span class="badge">BE CSE (CGPA 8.8)</span>
+                <span class="badge">Gold (NASSCOM)</span>
+                <span class="badge">AI Enthusiast</span>
+            </div>
+            <br>
+            <p class="hero-description" style="font-family: 'Times New Roman', Times, serif; text-align: center; display: block; width: 100%;">
+                Passionate about Software Development. 
+            </p>
+        </div>
+    </section>
+
+         <!-- 2. About / CTA Section -->
+    <section id="about">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h2 style="color: var(--accent-purple); margin-bottom: 2rem; font-family: 'Times New Roman', Times, serif;">About Me</h2>
+                <p style="color: #555; line-height: 1.8; margin-bottom: 2rem; font-size: 1.1rem; text-align: justify; font-family: 'Times New Roman', Times, serif;">
+                    I’m Yamini P, a third-year Computer Science Engineering student with strong fundamentals in Java, C, and Python. I have hands-on experience in machine learning through developing a Sign Language Detection System and possess skills in web technologies, MySQL, and tools like Git and Power BI. With certifications from NPTEL and NASSCOM and internship experience in cybersecurity, I am passionate about software development and continuously improving my problem-solving abilities.
+                </p>
+                <div style="margin-top: 2rem;">
+                    <a href="#contact" class="btn-glow">Hire Me</a>
+                    <a href="#contact" class="btn-glow btn-outline">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+         
+       <!-- 3. Resume Section -->
+    <section id="resume">
+        <div class="container">
+            <h2 style="text-align: center; color: var(--accent-purple); font-family: 'Times New Roman', Times, serif; margin-bottom: 2rem;">My Resume</h2>
+            <div class="glass-card resume-card" style="text-align: center; max-width: 500px; margin: 0 auto;">
+                <p style="margin-bottom: 1rem; color: #555; font-family: 'Times New Roman', Times, serif;">View my academic achievements and project details</p>
+                
+                   <!-- Resume Preview with Fallback -->
+         <div style="background: #f5f5f5; border-radius: 10px; margin-bottom: 1.5rem; padding: 10px; border: 1px solid #ddd;">
+                <img src="resume-preview.png" alt="Resume Preview" 
+                style="width: 100%; border-radius: 8px;"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+             <div style="display: none; height: 200px; flex-direction: column; align-items: center; justify-content: center; color: #666;">
+                 <i class="fas fa-image" style="font-size: 3rem; margin-bottom: 10px;"></i>
+                 <p>Preview image not found</p>
+             </div>
+         </div>
+                
+                <!-- Download Button - USE YOUR EXACT FILENAME -->
+                <a href="Yamini_Resume.pdf" download class="btn-glow" style="text-decoration: none;">
+                    <i class="fas fa-download"></i> Download PDF
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Project Section -->
+    
+    <section id="projects">
+    <div class="container">
+        <h2 style="text-align: center; color: var(--accent-purple); font-family: 'Times New Roman', Times, serif; margin-bottom: 2rem;">My Projects</h2>
+        <div class="projects-grid">
+            
+            <!-- Project 1 -->
+            <div class="glass-card project-card">
+                <h3 style="color: var(--accent-purple); font-family: 'Times New Roman', Times, serif;">Sign Language Detection System</h3>
+                <p style="color: #555; font-family: 'Times New Roman', Times, serif; line-height: 1.6;">ML-based gesture recognition system built with Python. Real-time hand gesture translation for accessibility and communication.</p>
+                <br>
+                <span class="badge">Python</span>
+                <span class="badge">Machine Learning</span>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="glass-card project-card">
+                <h3 style="color: var(--accent-purple); font-family: 'Times New Roman', Times, serif;">AI-Powered Autofill Patient Discharge System</h3>
+                <p style="color: #555; font-family: 'Times New Roman', Times, serif; line-height: 1.6;">Generates discharge summaries in 5-10 minutes with doctor verification system. Reduces administrative workload in healthcare.</p>
+                <br>
+                <span class="badge">AI</span>
+                <span class="badge">Healthcare</span>
+            </div>
+            
+        </div>
+        
+        <!-- GitHub Username -->
+        <p style="text-align: center; margin-top: 2rem; font-family: 'Times New Roman', Times, serif; color: #555;">
+            Check out more projects on GitHub: 
+            <a href="https://github.com/yamini-p-cse" target="_blank" style="color: var(--accent-purple); font-weight: bold; text-decoration: none;">
+                github.com/yamini-p-cse
+            </a>
+        </p>
+    </div>
+</section>
+
+    <!-- 5. Skills Section -->
+    <section id="skills">
+               <div class="glass-card skills-wrapper" style="max-width: 600px; margin: 0 auto;">
+            
+            <!-- Java -->
+            <div class="skill-box">
+                <div class="skill-info" style="font-family: 'Times New Roman', Times, serif;"><span>Java</span><span>90%</span></div>
+                <div class="progress-bar" style="background: #e0e0e0; border-radius: 10px; height: 12px; overflow: hidden;">
+                    <div class="progress-fill" style="width: 90%; background: linear-gradient(90deg, #7F5AF0, #2CB67D); height: 100%; border-radius: 10px;"></div>
+                </div>
+            </div>
+            
+            <!-- C -->
+            <div class="skill-box">
+                <div class="skill-info" style="font-family: 'Times New Roman', Times, serif;"><span>C</span><span>85%</span></div>
+                <div class="progress-bar" style="background: #e0e0e0; border-radius: 10px; height: 12px; overflow: hidden;">
+                    <div class="progress-fill" style="width: 85%; background: linear-gradient(90deg, #7F5AF0, #2CB67D); height: 100%; border-radius: 10px;"></div>
+                </div>
+            </div>
+            
+            <!-- HTML -->
+            <div class="skill-box">
+                <div class="skill-info" style="font-family: 'Times New Roman', Times, serif;"><span>HTML</span><span>95%</span></div>
+                <div class="progress-bar" style="background: #e0e0e0; border-radius: 10px; height: 12px; overflow: hidden;">
+                    <div class="progress-fill" style="width: 95%; background: linear-gradient(90deg, #7F5AF0, #2CB67D); height: 100%; border-radius: 10px;"></div>
+                </div>
+            </div>
+            
+            <!-- CSS -->
+            <div class="skill-box">
+                <div class="skill-info" style="font-family: 'Times New Roman', Times, serif;"><span>CSS</span><span>90%</span></div>
+                <div class="progress-bar" style="background: #e0e0e0; border-radius: 10px; height: 12px; overflow: hidden;">
+                    <div class="progress-fill" style="width: 90%; background: linear-gradient(90deg, #7F5AF0, #2CB67D); height: 100%; border-radius: 10px;"></div>
+                </div>
+            </div>
+            
+            <!-- JavaScript -->
+            <div class="skill-box">
+                <div class="skill-info" style="font-family: 'Times New Roman', Times, serif;"><span>JavaScript</span><span>85%</span></div>
+                <div class="progress-bar" style="background: #e0e0e0; border-radius: 10px; height: 12px; overflow: hidden;">
+                    <div class="progress-fill" style="width: 85%; background: linear-gradient(90deg, #7F5AF0, #2CB67D); height: 100%; border-radius: 10px;"></div>
+                </div>
+            </div>
+            
+            <!-- SQL -->
+            <div class="skill-box">
+                <div class="skill-info" style="font-family: 'Times New Roman', Times, serif;"><span>SQL</span><span>80%</span></div>
+                <div class="progress-bar" style="background: #e0e0e0; border-radius: 10px; height: 12px; overflow: hidden;">
+                    <div class="progress-fill" style="width: 80%; background: linear-gradient(90deg, #7F5AF0, #2CB67D); height: 100%; border-radius: 10px;"></div>
+                </div>
+            </div>
+            
+            <!-- Git -->
+            <div class="skill-box">
+                <div class="skill-info" style="font-family: 'Times New Roman', Times, serif;"><span>Git</span><span>85%</span></div>
+                <div class="progress-bar" style="background: #e0e0e0; border-radius: 10px; height: 12px; overflow: hidden;">
+                    <div class="progress-fill" style="width: 85%; background: linear-gradient(90deg, #7F5AF0, #2CB67D); height: 100%; border-radius: 10px;"></div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Tools -->
+        <div class="tools-grid" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 2rem;">
+            <span class="badge">VS Code</span>
+            <span class="badge">Eclipse</span>
+            <span class="badge">GitHub</span>
+            <span class="badge">Jupyter</span>
+        </div>
+    </div>
+</section>
+
+
+
+
+    <!-- 6. Certifications Section -->
+      
+              
+    <section id="certifications">
+        <div class="container">
+            <h2 style="text-align: center; color: var(--accent-purple); font-family: 'Times New Roman', Times, serif; margin-bottom: 2rem;">Certifications</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; width: 100%;">
+                
+                <!-- Certification 1 - Clickable -->
+                <a href="nasscom-certificate.png" target="_blank" style="text-decoration: none;">
+                    <div class="glass-card" style="text-align: center; cursor: pointer; transition: transform 0.3s;">
+                        <h3 style="color: var(--accent-purple); font-family: 'Times New Roman', Times, serif; margin-bottom: 1rem;">Gold Certificate - NASSCOM</h3>
+                        <p style="color: #555; font-family: 'Times New Roman', Times, serif; line-height: 1.6;">Industry-recognized certification in emerging technologies.</p>
+                        <span class="badge" style="margin-top: 1rem; display: inline-block;">Click to View</span>
+                    </div>
+                </a>
+                
+                <!-- Certification 2 - Clickable -->
+                <a href="nptel-certificate.png" target="_blank" style="text-decoration: none;">
+                    <div class="glass-card" style="text-align: center; cursor: pointer; transition: transform 0.3s;">
+                        <h3 style="color: var(--accent-purple); font-family: 'Times New Roman', Times, serif; margin-bottom: 1rem;">NPTEL Certification</h3>
+                        <p style="color: #555; font-family: 'Times New Roman', Times, serif; line-height: 1.6;">Java Programming certification  from NPTEL.</p>
+                        <span class="badge" style="margin-top: 1rem; display: inline-block;">Click to View</span>
+                    </div>
+                </a>
+
+                 <!-- Certification 3 - Clickable -->
+                <a href="html-infosys.png" target="_blank" style="text-decoration: none;">
+                    <div class="glass-card" style="text-align: center; cursor: pointer; transition: transform 0.3s;">
+                        <h3 style="color: var(--accent-purple); font-family: 'Times New Roman', Times, serif; margin-bottom: 1rem;">HTML5 Certificate - Infosys</h3>
+                        <p style="color: #555; font-family: 'Times New Roman', Times, serif; line-height: 1.6;">HyperText Markup Language certification from Infosys.</p>
+                        <span class="badge" style="margin-top: 1rem; display: inline-block;">Click to View</span>
+                    </div>
+                </a>
+
+                 <!-- Certification 4 - Clickable -->
+                <a href="css-infosys.png" target="_blank" style="text-decoration: none;">
+                    <div class="glass-card" style="text-align: center; cursor: pointer; transition: transform 0.3s;">
+                        <h3 style="color: var(--accent-purple); font-family: 'Times New Roman', Times, serif; margin-bottom: 1rem;">CSS Certificate - Infosys</h3>
+                        <p style="color: #555; font-family: 'Times New Roman', Times, serif; line-height: 1.6;">Cascading Style Sheets certification from Infosys.</p>
+                        <span class="badge" style="margin-top: 1rem; display: inline-block;">Click to View</span>
+                    </div>
+                </a>
+
+                <!-- Certification 5 - Clickable -->
+                <a href="js-infosys.png" target="_blank" style="text-decoration: none;">
+                    <div class="glass-card" style="text-align: center; cursor: pointer; transition: transform 0.3s;">
+                        <h3 style="color: var(--accent-purple); font-family: 'Times New Roman', Times, serif; margin-bottom: 1rem;">JavaScript Certificate - Infosys</h3>
+                        <p style="color: #555; font-family: 'Times New Roman', Times, serif; line-height: 1.6;">JavaScript programming certification from Infosys.</p>
+                        <span class="badge" style="margin-top: 1rem; display: inline-block;">Click to View</span>
+                    </div>
+                </a>
+
+                <!-- Certification 6 - Clickable -->
+                <a href="azure-intellipaat.png" target="_blank" style="text-decoration: none;">
+                    <div class="glass-card" style="text-align: center; cursor: pointer; transition: transform 0.3s;">
+                        <h3 style="color: var(--accent-purple); font-family: 'Times New Roman', Times, serif; margin-bottom: 1rem;">Microsoft Azure - Intellipaat</h3>
+                        <p style="color: #555; font-family: 'Times New Roman', Times, serif; line-height: 1.6;">Cloud computing certification from Intellipaat.</p>
+                        <span class="badge" style="margin-top: 1rem; display: inline-block;">Click to View</span>
+                    </div>
+                </a>
+                
+            </div>
+        </div>
+    </section>
+
+
+<!-- 7. Coding Profiles Section -->
+    <section id="profiles">
+        <div class="container">
+            <h2 style="text-align: center; color: var(--accent-purple); font-family: 'Times New Roman', Times, serif; margin-bottom: 2rem;">Coding Profiles</h2>
+            <div class="profiles-grid" style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap;">
+                
+                <!-- GitHub -->
+                <a href="https://github.com/yamini-p-cse" target="_blank" style="width: 70px; height: 70px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: #333; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-decoration: none; transition: 0.3s;">
+                    <i class="fab fa-github"></i>
+                </a>
+                
+                <!-- GeeksforGeeks -->
+                <a href="https://www.geeksforgeeks.org/profile/yaminipartvbx9?tab=activity" target="_blank" style="width: 70px; height: 70px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; font-size: 1rem; color: #2f8d46; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-decoration: none; transition: 0.3s;">
+                    GFG
+                </a>
+                
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/yamini-p-41117635b/" target="_blank" style="width: 70px; height: 70px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: #0077b5; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-decoration: none; transition: 0.3s;">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                
+                <!-- LeetCode -->
+                <a href="https://leetcode.com/u/Yamini_Parthiban/" target="_blank" style="width: 70px; height: 70px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: #ffa116; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-decoration: none; transition: 0.3s;">
+                    <i class="fas fa-code"></i>
+                </a>
+                
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 8. Contact Section -->
+
+
+<section id="contact">
+        <div class="container">
+            <h2 style="text-align: center; color: var(--accent-purple); font-family: 'Times New Roman', Times, serif; margin-bottom: 2rem;">Get In Touch</h2>
+            <div class="glass-card" style="max-width: 600px; margin: 0 auto; width: 100%;">
+                
+                <!-- Replace YOUR_FORM_ID with your actual form ID -->
+                <form action="https://formspree.io/f/mvzbyloq" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+                    
+                    <input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 10px; font-family: 'Times New Roman', Times, serif;">
+                    
+                    <input type="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 10px; font-family: 'Times New Roman', Times, serif;">
+                    
+                    <textarea name="message" rows="5" placeholder="Your Message" required style="width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 10px; font-family: 'Times New Roman', Times, serif;"></textarea>
+                    
+                    <button type="submit" class="btn-glow" style="width: 100%;">Send Message</button>
+                    
+                </form>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                    <p style="font-family: 'Times New Roman', Times, serif;"><strong>Phone:</strong> 9087013479</p>
+                    <p style="font-family: 'Times New Roman', Times, serif;"><strong>Email:</strong> yaminiparthiban0212@gmail.com</p>
+                </div>
+            </div>
+        </div>
+</section>
+
+<!-- Footer -->
+<footer style="background: #f8f9fa; padding: 2rem; text-align: center;">
+    <div style="display: flex; justify-content: center; gap: 25px; margin-bottom: 1rem;">
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/in/yamini-p-cse" target="_blank" style="color: #0077b5; font-size: 1.5rem; text-decoration: none;">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/yamini_p_05/" target="_blank" style="color: #e4405f; font-size: 1.5rem; text-decoration: none;">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <!-- GitHub -->
+        <a href="https://github.com/yamini-p-cse" target="_blank" style="color: #333; font-size: 1.5rem; text-decoration: none;">
+            <i class="fab fa-github"></i>
+        </a>
+    </div>
+    <p style="font-family: 'Times New Roman', Times, serif; color: #555;">
+        © 2024 Yamini P. All Rights Reserved.
+    </p>
+</footer>
+
+
+
+<script>
+    // --- Mobile Menu Toggle ---
+    function toggleMenu() {
+        const navLinks = document.getElementById('navLinks');
+        navLinks.classList.toggle('active');
+    }
+
+    // --- Active Link on Scroll ---
+    const sections = document.querySelectorAll('section');
+    const navLinksList = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (scrollY >= sectionTop - 150) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinksList.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').slice(1) === current) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // --- Close mobile menu when clicking a link ---
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.getElementById('navLinks').classList.remove('active');
+        });
+    });
+</script>
